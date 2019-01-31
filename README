@@ -1,0 +1,19 @@
+This project requires a command-line media player to be installed.
+This application is currently configured with omxplayer (apt-get install omxplayer) but others such as mpg321 can be used by editing the #define PLAYER_CMD on line 39
+The GPIO pins used are hardcoded and can be updated by editing the #define HOOK_PIN, DIAL_PIN, and PULSE_PIN in RedPhone.cpp and recompiling.
+
+There is nothing revolutionary about the source code. Feel free to modify it to your heart's content.
+
+The bcm2835.cpp/h are not my creation, I take no credit for it. They are provided here for convenience. I may have added some type casts to silence warnings.
+
+Compile with "g++ RedPhone.cpp bcm2835.cpp -o redphone -lc"
+
+Create 10 subdirectories. 0,1,2,3,4,5,6,7,8,9
+Populate those subdirectories with mp3 and wav files that you'd like to play when certain numbers are dialled on the phone.
+
+The tool spawns a daemon when executed, so it will appear to immediately terminate. You will see it running by running "ps -A | grep redphone"
+
+Enjoy
+
+e-mail cory@whitesell.name if you have any questions.
+
